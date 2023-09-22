@@ -2,6 +2,7 @@ import React, { useState } from 'react'
 import axios from 'axios'
 import "../styles/signup.css"
 import { useNavigate } from 'react-router-dom'
+import { ToastContainer, toast } from 'react-toastify';
 
 const SignUp = () => {
     let [name, setName] = useState('')
@@ -15,12 +16,11 @@ const SignUp = () => {
     let handleSubmit = () => {
         axios.post('http://localhost:8080/users', data)
             .then((resp) => {
-                alert("User Added :)")
+                toast.success("User Added :)")
                 nav('/login')
             })
             .catch((err) => {
-                alert("Not Added!")
-                console.log(err)
+                toast.error("Not Added!")
             })
     }
     return (
@@ -34,6 +34,7 @@ const SignUp = () => {
                 <input type="tel" pattern='[0-9]{12}' placeholder='Aadhar Number' value={aadhar} onChange={(e) => { setAadhar(e.target.value) }} required /> <br /><br />
                 <input type="password" placeholder='Password' value={password} onChange={(e) => { setPassword(e.target.value) }} required /> <br /><br />
                 <button onClick={handleSubmit}>Register</button>
+                <ToastContainer />
 
             </form>
         </div>

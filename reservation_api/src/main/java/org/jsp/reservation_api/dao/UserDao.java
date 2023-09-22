@@ -22,7 +22,10 @@ public class UserDao {
 		return repo.findById(id);
 	}
 
-//	public Optional<User> verify(long phone,String password){
-//		return repo.verify(phone, password);
-//	}
+	public Optional<User> verifyUser(long phone,String password){
+		return repo.verifyUser(phone, password);
+	}
+	public Optional<User> verifyUser(String email,String password){
+		return repo.verifyUser(email, password);
+	}
 }

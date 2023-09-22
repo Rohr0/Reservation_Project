@@ -10,9 +10,9 @@ const NavBar = () => {
 
             <h1><img className='cheetahimg' src="/cheetah_travelz.png" alt="" /> Cheetah Travelz</h1>
             <div className="options">
-                <Link to="/about"><InfoOutlinedIcon />About Us</Link>
-                <Link to="/contact"><ContactPageOutlinedIcon />Contact</Link>
-                <Link to="/login"><LoginOutlinedIcon />Login</Link>
+                <Link to="/about"><InfoOutlinedIcon id="icon" />About Us</Link>
+                <Link to="/contact"><ContactPageOutlinedIcon id="icon" />Contact</Link>
+                <Link to="/login"><LoginOutlinedIcon id="icon" />Login</Link>
             </div>
 
         </div>

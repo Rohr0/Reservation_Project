@@ -1,10 +1,13 @@
 package org.jsp.reservation_api.dto;
 
+import java.util.List;
+
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.persistence.OneToMany;
 import lombok.Getter;
 import lombok.Setter;
 
@@ -23,5 +26,7 @@ public class Admin {
 	@Column(nullable=false,unique = true)
 	private String gst;
 	private String password;
+	@OneToMany(mappedBy = "admin")
+	private List<Bus> buses;
 
 }
